@@ -7,14 +7,14 @@ import datetime
 from GetIp import *
 
 
-url = 'https://pastebin.com/raw/Nb16PwK8' # url from where to read the licenses
-webhook_url = 'https://discord.com/api/webhooks/1139007996685467790/Z3PDG-KjjeSR0JYoJ2VSQub7nHY22xLU6Yq-W0GZq8Ar_mqT4sirCaq2xGJvNPOvDyNZ' # discord webhook url
+url = '' # url from where to read the licenses
+webhook_url = '' # discord webhook url
 ipv4 = get_public_ip()
 response = requests.get(url)
-validkeys = []
 
 
 # Gattering the valid keys
+validkeys = []
 for line in response.iter_lines(): # for each line in the response append to validkeys
     if line:
         validkeys.append(line.decode("utf-8"))
@@ -53,7 +53,7 @@ else: # deny access if the license isn't valid and exit the program
     sys.exit()
 
 
-# post authentication
+# post authentication menu
 os.system('cls')
 print('[1] Option 1\n')
 print('[2] Option 2\n')
